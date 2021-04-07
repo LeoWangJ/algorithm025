@@ -10,6 +10,7 @@
  * @param {ListNode} l2
  * @return {ListNode}
  * 
+ * 使用遞迴
  */
  var mergeTwoLists = function(l1, l2) {
   if(l1 === null){
