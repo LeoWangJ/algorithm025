@@ -9,21 +9,25 @@
 /**
  * @param {TreeNode} root
  * @return {number[][]}
+ * 
+ * 1. 廣度優先搜索 (BFS) , 使用隊列來維護。 時間複雜度 O(n)
+ * 
+ * 參考: https://leetcode-cn.com/problems/binary-tree-level-order-traversal/solution/bfs-de-shi-yong-chang-jing-zong-jie-ceng-xu-bian-l/
  */
 var levelOrder = function(root) {
-    let result = [], queue = [root]
-    if (!root) {
-       return result;
+   let result = [], queue = [root]
+   if(!root){
+       return result
    }
    while(queue.length > 0){
        let level = [], n = queue.length
-       for(let i = 0; i< n;i++){
-           let node = queue.pop()
-           level.push(node.val)
-           if(node.left) queue.unshift(node.left)
-           if(node.right) queue.unshift(node.right)
+       for(let i = 0;i< n;i++){
+        let node = queue.pop()
+        if(node.left) queue.unshift(node.left)
+        if(node.right) queue.unshift(node.right)
+        level.push(node.val)
        }
        result.push(level)
    }
-   return result
+   return result 
 };
