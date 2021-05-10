@@ -5,6 +5,11 @@
  * 
  * 1. 動態規劃
  * 
+ * 解決過程:
+ * 1. 最優子結構 -> 當前金額的硬幣數 =  (先前金額 + 硬幣金額為當前金額)的硬幣數中找出最小數
+ * ex: coin = [1,2,5] amount = 11
+ * dp[11] = Math.min(dp[10] + 1, dp[9] + 1,dp[6] + 1) 
+ * 
  * 參考: https://leetcode-cn.com/problems/coin-change/solution/js-xiang-jie-dong-tai-gui-hua-de-si-xiang-yi-bu-da/
  */
 var coinChange = function(coins, amount) {
