@@ -5,8 +5,9 @@
  * 1. 動態規劃 O(m * n)
  * 
  * 解題過程:
- * 1. 
- * 
+ * 1. 最佳子結構 -> 當前項 = 上層 + 左層
+ * 2. 空間優化, 使用一維dp 來記錄上層 + 左層的值 
+ * 3. dp[j] = dp[j] + dp[j-1] (當前dp[j] 未取代前為上層值 dp[j-1] 則為左層)
  * 參考: 老師課程
  */
  var uniquePathsWithObstacles = function(obstacleGrid) {
